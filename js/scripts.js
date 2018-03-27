@@ -1,15 +1,21 @@
 $(function() {
   $("#form").submit(function(event) {
     var userInput = $("#input").val();
+
     function reverseUserInput(string) {
-      return userInput.split("").reverse().join("");
+       return userInput.split("").reverse().join("");
     }
 
-    if (reverseUserInput(userInput) === userInput) {
-    $("#output").text("That's a palindrome!");
-  } else {
-    $("#output").text("That's not a palindrome!")
-  }
+    var reverse = reverseUserInput(userInput);
+
+    console.log(reverseUserInput(userInput));
+
+    if (reverse === userInput) {
+      $("#output").text("That's a palindrome!");
+    } else {
+      $("#output").text("That's not a palindrome!")
+    }
+
     event.preventDefault();
   });
 });
